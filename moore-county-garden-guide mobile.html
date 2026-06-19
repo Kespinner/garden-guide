@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Moore County Garden Guide — Sandhills NC</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --g50:#EAF3DE;--g80:#27500A;--g60:#3B6D11;
+  --t50:#E1F5EE;--t80:#085041;--t100:#9FE1CB;
+  --a50:#FAEEDA;--a80:#633806;
+  --b50:#E6F1FB;--b80:#0C447C;
+  --r50:#FCEBEB;--r80:#791F1F;
+  --p50:#EEEDFE;--p80:#3C3489;
+  --bg:#FAFAF8;--bg2:#F2F0EB;--bg3:#E8E5DE;
+  --tx:#1A1A18;--tx2:#5A5A55;--tx3:#909088;
+  --bdr:rgba(0,0,0,0.13);--bdr2:rgba(0,0,0,0.22);
+  --rad:8px;--radl:12px;
+  --ff:'Segoe UI',system-ui,-apple-system,sans-serif;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1A1A17;--bg2:#242420;--bg3:#2E2E28;
+    --tx:#F0EDE6;--tx2:#A0A09A;--tx3:#6A6A62;
+    --bdr:rgba(255,255,255,0.1);--bdr2:rgba(255,255,255,0.2);
+    --g50:#1A2E12;--g80:#C0DD97;
+    --t50:#052820;--t80:#9FE1CB;--t100:#085041;
+    --a50:#2A1E08;--a80:#FAC775;
+    --b50:#071829;--b80:#85B7EB;
+    --r50:#200A0A;--r80:#F7C1C1;
+    --p50:#12103A;--p80:#AFA9EC;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--tx);font-size:15px;line-height:1.6;min-height:100vh}
+
+/* Top bar */
+.topbar{background:var(--bg2);border-bottom:1px solid var(--bdr);padding:12px 16px;position:sticky;top:0;z-index:100}
+.topbar-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.topbar-title{font-size:15px;font-weight:600;color:var(--tx);display:flex;align-items:center;gap:7px}
+.topbar-sub{font-size:11px;color:var(--tx2);line-height:1.4}
+
+/* Shell */
+.shell{max-width:860px;margin:0 auto;padding:0 14px 60px}
+
+/* Nav */
+.nav{display:flex;gap:6px;flex-wrap:wrap;padding:12px 0 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.tab{background:none;border:1px solid var(--bdr2);border-radius:var(--rad);padding:8px 13px;font-size:13px;cursor:pointer;color:var(--tx2);font-family:var(--ff);display:flex;align-items:center;gap:5px;transition:all .15s;white-space:nowrap;-webkit-appearance:none;min-height:38px}
+.tab:hover{background:var(--bg2);color:var(--tx)}
+.tab.active{background:var(--bg3);color:var(--tx);border-color:var(--bdr2);font-weight:600}
+
+/* Sections */
+.section{display:none}.section.active{display:block}
+
+/* Cards */
+.card{background:var(--bg2);border:1px solid var(--bdr);border-radius:var(--radl);padding:14px 16px;margin-bottom:10px}
+.card-warn{border-color:#E24B4A}
+.card-title{font-weight:600;font-size:14px;color:var(--tx);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+
+/* Metrics */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-bottom:14px}
+.metric{background:var(--bg3);border-radius:var(--rad);padding:12px 14px}
+.metric-label{font-size:10px;color:var(--tx2);margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em}
+.metric-value{font-size:22px;font-weight:700;color:var(--tx)}
+
+/* Badges */
+.badge{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;font-weight:600;white-space:nowrap}
+.bg{background:var(--g50);color:var(--g80)}
+.ba{background:var(--a50);color:var(--a80)}
+.bb{background:var(--b50);color:var(--b80)}
+.br{background:var(--r50);color:var(--r80)}
+.bt{background:var(--t50);color:var(--t80)}
+.bp{background:var(--p50);color:var(--p80)}
+
+/* Plant rows */
+.plant-row{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--bdr)}
+.plant-row:last-child{border-bottom:none}
+.pe{font-size:20px;width:28px;text-align:center;flex-shrink:0;margin-top:1px}
+.pi{flex:1;min-width:0}
+.pn{font-weight:600;font-size:14px;color:var(--tx)}
+.ps{font-size:12px;color:var(--tx2);margin-top:2px;line-height:1.5}
+
+/* Callout */
+.callout{background:var(--t50);border:1px solid var(--t100);border-radius:var(--rad);padding:12px 14px;margin-bottom:14px;font-size:13px;color:var(--t80);line-height:1.6}
+.callout strong{color:var(--g60)}
+@media(prefers-color-scheme:dark){.callout{background:#052820;border-color:#085041;color:#9FE1CB}.callout strong{color:#9FE1CB}}
+
+/* Alert items */
+.ai-item{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--bdr)}
+.ai-item:last-child{border-bottom:none}
+.ai-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.ai-text{font-size:13px;color:var(--tx);line-height:1.5}
+.ai-sub{font-size:11px;color:var(--tx2);margin-top:2px;line-height:1.4}
+
+/* Tip lists */
+.tlist{padding:0;list-style:none}
+.tlist li{font-size:13px;color:var(--tx);padding:3px 0;display:flex;gap:7px;line-height:1.55}
+.tlist li::before{content:'→';color:var(--tx3);flex-shrink:0}
+.tblock{margin-bottom:14px}
+.tblock h4{font-size:13px;font-weight:600;color:var(--tx);margin-bottom:7px;display:flex;align-items:center;gap:7px}
+.divider{height:1px;background:var(--bdr);margin:12px 0}
+
+/* Calendar */
+.cal-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--rad);border:1px solid var(--bdr)}
+.cal-table{width:100%;border-collapse:collapse;font-size:12px;min-width:540px}
+.cal-table th{text-align:left;padding:7px 9px;color:var(--tx2);font-weight:600;border-bottom:1px solid var(--bdr2);font-size:11px;background:var(--bg3);white-space:nowrap}
+.cal-table td{padding:7px 9px;border-bottom:1px solid var(--bdr);vertical-align:top;color:var(--tx)}
+.cal-table tr:last-child td{border-bottom:none}
+.cal-now td{background:var(--g50)}
+@media(prefers-color-scheme:dark){.cal-now td{background:#1A2E12}}
+
+/* Search / AI buttons */
+.ask-box{background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--radl);padding:14px 16px;margin-bottom:10px}
+.ask-box p{font-size:13px;color:var(--tx2);margin-bottom:10px;line-height:1.5}
+.chip-group{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.chip{background:none;border:1px solid var(--bdr2);border-radius:20px;padding:6px 12px;font-size:12px;cursor:pointer;color:var(--tx2);font-family:var(--ff);transition:all .15s;text-decoration:none;display:inline-block;line-height:1.4;-webkit-appearance:none}
+.chip:hover,.chip:active{background:var(--bg2);color:var(--tx);border-color:var(--bdr2)}
+.ask-btn{display:inline-flex;align-items:center;gap:6px;background:var(--bg2);border:1px solid var(--bdr2);border-radius:var(--rad);padding:9px 16px;font-size:13px;font-family:var(--ff);cursor:pointer;color:var(--tx);font-weight:500;text-decoration:none;margin-top:4px;-webkit-appearance:none;line-height:1.4}
+.ask-btn:hover,.ask-btn:active{background:var(--bg3)}
+
+/* Section label */
+.slabel{font-size:11px;font-weight:600;color:var(--tx3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;margin-top:4px}
+
+/* Footer */
+.footer{margin-top:24px;padding:14px 0;border-top:1px solid var(--bdr);font-size:12px;color:var(--tx3);line-height:1.8}
+.footer a{color:var(--tx2);text-decoration:underline}
+
+/* Mobile tweaks */
+@media(max-width:480px){
+  .topbar-sub{display:none}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .metric-value{font-size:20px}
+  .plant-row{flex-wrap:wrap}
+  .plant-row .badge{margin-top:4px;margin-left:38px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div>
+      <div class="topbar-title"><i class="ti ti-plant-2" aria-hidden="true"></i> Moore County Garden Guide</div>
+      <div class="topbar-sub">Southern Pines · Sandhills · Zone 7b–8a · Last frost Apr 14 · First frost Nov 5</div>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+  <nav class="nav" role="tablist" aria-label="Garden guide sections">
+    <button class="tab active" role="tab" aria-selected="true"  onclick="show('now','this')"     ><i class="ti ti-sparkles"  aria-hidden="true"></i> Plant now</button>
+    <button class="tab"        role="tab" aria-selected="false" onclick="show('cal','this')"     ><i class="ti ti-calendar"  aria-hidden="true"></i> Calendar</button>
+    <button class="tab"        role="tab" aria-selected="false" onclick="show('search','this')"  ><i class="ti ti-search"    aria-hidden="true"></i> Plant search</button>
+    <button class="tab"        role="tab" aria-selected="false" onclick="show('pests','this')"   ><i class="ti ti-bug"       aria-hidden="true"></i> Pests</button>
+    <button class="tab"        role="tab" aria-selected="false" onclick="show('wild','this')"    ><i class="ti ti-paw"       aria-hidden="true"></i> Wildlife</button>
+    <button class="tab"        role="tab" aria-selected="false" onclick="show('soil','this')"    ><i class="ti ti-shovel"    aria-hidden="true"></i> Soil &amp; fertilizer</button>
+  </nav>
+
+  <!-- ── PLANT NOW ───────────────────────────────────────── -->
+  <div id="now" class="section active" role="tabpanel">
+    <div class="callout">
+      <strong>June 19 — Mid-summer in the Sandhills.</strong> Last frost was Apr 14. About 139 days remain before the first fall frost (~Nov 5). Focus on heat-tolerant warm-season crops now. Start cool-season fall seeds indoors in late July.
+    </div>
+    <div class="grid4">
+      <div class="metric"><div class="metric-label">Days to frost</div><div class="metric-value">139</div></div>
+      <div class="metric"><div class="metric-label">Season length</div><div class="metric-value">205 days</div></div>
+      <div class="metric"><div class="metric-label">Zone</div><div class="metric-value">7b / 8a</div></div>
+      <div class="metric"><div class="metric-label">Avg Jul high</div><div class="metric-value">91°F</div></div>
+    </div>
+
+    <div class="slabel">Direct sow or transplant outdoors now</div>
+    <div class="card">
+      <div class="plant-row"><div class="pe">🌿</div><div class="pi"><div class="pn">Southern Collard Greens</div><div class="ps">Sow now through August. Best NC varieties: <em>Champion, Georgia Southern, Vates, Morris Heading.</em> Flavor improves after light frost.</div></div><span class="badge bg">Plant now</span></div>
+      <div class="plant-row"><div class="pe">🫘</div><div class="pi"><div class="pn">Southern Peas / Cowpeas</div><div class="ps">Sow Jun–Jul 15. Varieties: <em>Iron &amp; Clay, Mississippi Purple, Whippoorwill, Pinkeye Purple Hull.</em> Fixes nitrogen into sandy soil.</div></div><span class="badge bg">Plant now</span></div>
+      <div class="plant-row"><div class="pe">🌽</div><div class="pi"><div class="pn">Sweet Corn</div><div class="ps">Sow Jun 1–Jul 15. Varieties: <em>Silver Queen, Kandy Korn, Bodacious.</em> Plant in 4-row blocks for wind pollination.</div></div><span class="badge bg">Plant now</span></div>
+      <div class="plant-row"><div class="pe">🥒</div><div class="pi"><div class="pn">Cucumbers</div><div class="ps">Sow through Jul 1. Varieties: <em>Straight Eight, Marketmore 76, Spacemaster.</em> Use row covers when young to block cucumber beetle.</div></div><span class="badge ba">Act soon</span></div>
+      <div class="plant-row"><div class="pe">🎃</div><div class="pi"><div class="pn">Summer Squash &amp; Zucchini</div><div class="ps">Sow through Jul 15. Varieties: <em>Yellow Crookneck, Black Beauty, Patio Star.</em> Watch for squash vine borer (peak season now).</div></div><span class="badge bg">Plant now</span></div>
+      <div class="plant-row"><div class="pe">🫛</div><div class="pi"><div class="pn">Okra</div><div class="ps">Sow through Jul 15. Varieties: <em>Clemson Spineless, Emerald, Burgundy.</em> Thrives in Sandhills heat. Harvest every 2 days at 3–4 inches.</div></div><span class="badge bg">Plant now</span></div>
+      <div class="plant-row"><div class="pe">🌿</div><div class="pi"><div class="pn">Basil</div><div class="ps">Sow through July. Varieties: <em>Genovese, Sweet Basil, Thai Basil, Lemon Basil.</em> Keep pinched. Protect from aphids with neem oil.</div></div><span class="badge bg">Plant now</span></div>
+      <div class="plant-row"><div class="pe">🌶️</div><div class="pi"><div class="pn">Peppers (transplant starts)</div><div class="ps">Transplant through Jun 30. Varieties: <em>Cayenne Long Red, Jimmy Nardello, Banana, Anaheim.</em></div></div><span class="badge ba">Act soon</span></div>
+      <div class="plant-row"><div class="pe">🍠</div><div class="pi"><div class="pn">Sweet Potato slips</div><div class="ps">Plant slips through Jun 30. Varieties: <em>Beauregard, Covington, Jewell.</em> Exceptional in Sandhills sandy soil — NC's top vegetable crop.</div></div><span class="badge ba">Last chance</span></div>
+    </div>
+
+    <div class="slabel" style="margin-top:14px">Start indoors now — for the fall garden</div>
+    <div class="card">
+      <div class="plant-row"><div class="pe">🥦</div><div class="pi"><div class="pn">Broccoli &amp; Cabbage</div><div class="ps">Start indoors <strong>Jul 15–Aug 1</strong>. Transplant out Sep 1–15. Varieties: <em>Packman, Green Magic, Stonehead.</em></div></div><span class="badge bp">Start Jul 15</span></div>
+      <div class="plant-row"><div class="pe">🥬</div><div class="pi"><div class="pn">Kale &amp; Collards (fall crop)</div><div class="ps">Start indoors <strong>late July</strong>. Transplant Aug 15–Sep 15. Varieties: <em>Red Russian, Lacinato, Vates.</em></div></div><span class="badge bp">Start Jul 25</span></div>
+      <div class="plant-row"><div class="pe">🌱</div><div class="pi"><div class="pn">Lettuce &amp; Spinach</div><div class="ps">Direct sow <strong>Aug 15–Sep 15</strong> when temps drop below 85°F. Varieties: <em>Jericho, New Red Fire, Tyee spinach.</em></div></div><span class="badge bb">Sow Aug 15</span></div>
+      <div class="plant-row"><div class="pe">🥕</div><div class="pi"><div class="pn">Carrots</div><div class="ps">Direct sow <strong>Aug 15–Sep 1</strong>. Excellent in Sandhills sandy loam. Varieties: <em>Danvers 126, Nantes Coreless.</em></div></div><span class="badge bb">Sow Aug 15</span></div>
+      <div class="plant-row"><div class="pe">🌿</div><div class="pi"><div class="pn">Parsley &amp; Cilantro</div><div class="ps">Direct sow <strong>Aug–Sep</strong> when temps fall below 85°F. Both bolt in summer heat — fall sowing is far more reliable in NC.</div></div><span class="badge bb">Sow Aug</span></div>
+    </div>
+  </div>
+
+  <!-- ── CALENDAR ────────────────────────────────────────── -->
+  <div id="cal" class="section" role="tabpanel">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-calendar" aria-hidden="true"></i> Moore County Annual Planting Calendar</div>
+      <p style="font-size:12px;color:var(--tx2);margin-bottom:10px">Source: NC State Extension Central NC Planting Calendar (AG-69) · Last frost Apr 14 · First frost Nov 5 · Green rows = active now</p>
+      <div class="cal-wrap">
+        <table class="cal-table">
+          <thead><tr><th>Crop</th><th>Spring</th><th>Summer</th><th>Fall</th></tr></thead>
+          <tbody>
+            <tr class="cal-now"><td><strong>🌿 Collards/Kale</strong></td><td>Feb 15–Apr 1</td><td>Jun–Aug ✓</td><td>Aug–Sep</td></tr>
+            <tr><td>🥬 Lettuce/Spinach</td><td>Feb 15–Apr 1</td><td>—</td><td>Aug 15–Oct 1</td></tr>
+            <tr><td>🥦 Broccoli/Cabbage</td><td>Mar 1–Apr 1 (T)</td><td>—</td><td>Sep 1–15 (T)</td></tr>
+            <tr><td>🥕 Carrots</td><td>Feb 15–Apr 1</td><td>—</td><td>Aug 15–Sep 15</td></tr>
+            <tr><td>🧅 Onions</td><td>Jan–Mar (sets)</td><td>—</td><td>Oct–Nov (sets)</td></tr>
+            <tr><td>🍅 Tomatoes</td><td>Apr 15–May 15 (T)</td><td>—</td><td>—</td></tr>
+            <tr class="cal-now"><td><strong>🌶️ Peppers</strong></td><td>May 1–30 (T)</td><td>Through Jun 30 ✓</td><td>—</td></tr>
+            <tr class="cal-now"><td><strong>🎃 Squash/Zucchini</strong></td><td>Apr 15–May 15</td><td>Jun 1–Jul 15 ✓</td><td>—</td></tr>
+            <tr class="cal-now"><td><strong>🥒 Cucumbers</strong></td><td>Apr 15–May 15</td><td>Jun 1–Jul 1 ✓</td><td>—</td></tr>
+            <tr class="cal-now"><td><strong>🫛 Okra</strong></td><td>May 1–Jun 1</td><td>Jun–Jul 15 ✓</td><td>—</td></tr>
+            <tr class="cal-now"><td><strong>🌽 Sweet Corn</strong></td><td>Apr 1–May 1</td><td>Jun 1–Jul 15 ✓</td><td>—</td></tr>
+            <tr class="cal-now"><td><strong>🫘 Southern Peas</strong></td><td>May 1–Jun 1</td><td>Jun–Jul 15 ✓</td><td>—</td></tr>
+            <tr class="cal-now"><td><strong>🌿 Basil</strong></td><td>May 1–Jun 1</td><td>Jun–Jul ✓</td><td>—</td></tr>
+            <tr><td>🌿 Parsley/Cilantro</td><td>Mar–Apr</td><td>—</td><td>Aug–Sep</td></tr>
+            <tr class="cal-now"><td><strong>🍠 Sweet Potatoes</strong></td><td>May 15–Jun 15 (slips)</td><td>Through Jun 30 ✓</td><td>—</td></tr>
+            <tr><td>🧄 Garlic</td><td>—</td><td>—</td><td>Oct 15–Nov 15</td></tr>
+            <tr><td>🍓 Strawberries</td><td>Mar 1–Apr 1 (crowns)</td><td>—</td><td>Oct (crowns)</td></tr>
+            <tr><td>🥔 Irish Potatoes</td><td>Feb 15–Mar 15</td><td>—</td><td>Aug 1–Sep 1</td></tr>
+            <tr><td>🫑 Lima Beans</td><td>Apr 15–May 15</td><td>Jun 1–Jul 1</td><td>—</td></tr>
+            <tr><td>🍵 Arugula</td><td>Feb 15–Apr 1</td><td>—</td><td>Aug 15–Oct 1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px;color:var(--tx3);margin-top:8px">(T) = transplants recommended. Scroll table left/right on small screens.</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><i class="ti ti-calendar-event" aria-hidden="true"></i> Seed-starting timeline</div>
+      <div class="ai-item"><div class="ai-dot" style="background:#1D9E75"></div><div><div class="ai-text">Start tomatoes, peppers, eggplant indoors</div><div class="ai-sub">Mid-February — 8–10 weeks before last frost (Apr 14)</div></div></div>
+      <div class="ai-item"><div class="ai-dot" style="background:#1D9E75"></div><div><div class="ai-text">Start broccoli, cabbage, cauliflower (spring)</div><div class="ai-sub">Feb 15 — transplant out Mar 15–Apr 1</div></div></div>
+      <div class="ai-item"><div class="ai-dot" style="background:#EF9F27"></div><div><div class="ai-text">Start fall broccoli, kale, collards indoors</div><div class="ai-sub">July 15–Aug 1 — transplant out Sep 1</div></div></div>
+      <div class="ai-item"><div class="ai-dot" style="background:#378ADD"></div><div><div class="ai-text">Direct sow cool-season greens, carrots, radishes</div><div class="ai-sub">Aug 15–Sep 15 for fall harvest</div></div></div>
+      <div class="ai-item"><div class="ai-dot" style="background:#7F77DD"></div><div><div class="ai-text">Plant garlic cloves</div><div class="ai-sub">Oct 15–Nov 15 for harvest next summer</div></div></div>
+      <div class="ai-item"><div class="ai-dot" style="background:#1D9E75"></div><div><div class="ai-text">Plant strawberry crowns</div><div class="ai-sub">October — establish over winter, harvest May–Jun</div></div></div>
+    </div>
+  </div>
+
+  <!-- ── PLANT SEARCH ────────────────────────────────────── -->
+  <div id="search" class="section" role="tabpanel">
+    <div class="ask-box">
+      <p>Tap a topic or write your own question and ask Claude — the AI gives you Moore County–specific advice drawing on NC State Extension knowledge, variety recommendations, and Sandhills growing conditions.</p>
+      <div class="chip-group">
+        <button class="chip" onclick="askClaude('Best tomato varieties for Moore County NC Sandhills sandy soil and humid summers')">Tomatoes for Sandhills</button>
+        <button class="chip" onclick="askClaude('Best collard green varieties for North Carolina and when to plant in Moore County')">Collard greens</button>
+        <button class="chip" onclick="askClaude('Best herbs to grow in Moore County NC Zone 7b heat and humidity')">Herbs Zone 7b</button>
+        <button class="chip" onclick="askClaude('How to grow sweet potatoes in sandy Sandhills soil Moore County NC')">Sweet potatoes</button>
+        <button class="chip" onclick="askClaude('Best watermelon varieties for Sandhills NC hot summers')">Watermelons</button>
+        <button class="chip" onclick="askClaude('Companion planting guide for vegetable garden Moore County NC')">Companion planting</button>
+        <button class="chip" onclick="askClaude('Best fall vegetables to grow in Moore County NC and when to start them')">Fall garden plan</button>
+        <button class="chip" onclick="askClaude('Growing conditions, watering, and fertilizer needs for tomatoes in NC Sandhills')">Tomato growing guide</button>
+      </div>
+      <p style="margin-bottom:8px">Or type your own question:</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <input id="sq" type="text" placeholder="e.g. when to plant garlic in Moore County…" style="flex:1;min-width:180px;font-family:var(--ff);font-size:14px;padding:9px 12px;border:1px solid var(--bdr2);border-radius:var(--rad);background:var(--bg);color:var(--tx);outline:none">
+        <button class="ask-btn" onclick="askFromInput('sq')"><i class="ti ti-external-link" aria-hidden="true"></i> Ask Claude</button>
+      </div>
+    </div>
+    <div class="card" style="font-size:13px;color:var(--tx2);line-height:1.6">
+      <p><i class="ti ti-info-circle" aria-hidden="true" style="margin-right:5px"></i>Tapping "Ask Claude" opens Claude.ai in your browser with your question pre-loaded. You'll get a detailed, Moore County–specific answer. Claude.ai works on phones, tablets, and computers.</p>
+    </div>
+  </div>
+
+  <!-- ── PESTS ───────────────────────────────────────────── -->
+  <div id="pests" class="section" role="tabpanel">
+    <div class="card card-warn">
+      <div class="card-title"><i class="ti ti-alert-triangle" aria-hidden="true"></i> Current pest alerts — Moore County, June</div>
+      <div class="ai-item"><div class="ai-dot" style="background:#E24B4A"></div><div><div class="ai-text">Squash vine borer — peak flight period</div><div class="ai-sub">High alert · Moths active Jun–Jul. Lay eggs at squash/zucchini stem bases. Wrap stems with kaolin clay or use row covers.</div></div></div>
+      <div class="ai-item"><div class="ai-dot" style="background:#E24B4A"></div><div><div class="ai-text">Japanese Beetle — active now</div><div class="ai-sub">High alert · Emerge Jun–Aug. Attack beans, corn, squash, okra. Hand-pick into soapy water in the morning when sluggish.</div></div></div>
+      <div class="ai-item"><div class="ai-dot" style="background:#EF9F27"></div><div><div class="ai-text">Tomato Hornworm — watch foliage</div><div class="ai-sub">Moderate · Large green caterpillars. Check undersides of tomato leaves. Look for dark droppings as a first sign.</div></div></div>
+      <div class="ai-item"><div class="ai-dot" style="background:#EF9F27"></div><div><div class="ai-text">Striped &amp; Spotted Cucumber Beetle</div><div class="ai-sub">Moderate · Transmits bacterial wilt, which kills cucumbers in days. Use yellow sticky traps to monitor; row covers on young plants.</div></div></div>
+      <div class="ai-item"><div class="ai-dot" style="background:#1D9E75"></div><div><div class="ai-text">Aphids — monitor okra &amp; peppers</div><div class="ai-sub">Low–moderate · Knock off with a strong water spray. Attract ladybugs by planting dill or fennel nearby.</div></div></div>
+    </div>
+
+    <div class="ask-box">
+      <p>Describe your plant's symptoms and get organic treatment advice specific to Moore County:</p>
+      <div class="chip-group">
+        <button class="chip" onclick="askClaude('Yellow spots on my cucumber leaves in Moore County NC — what pest or disease is this and how do I treat it organically?')">Yellow spots on cucumbers</button>
+        <button class="chip" onclick="askClaude('Holes in my collard green leaves in Moore County NC — what is eating them and what organic control should I use?')">Holes in collard leaves</button>
+        <button class="chip" onclick="askClaude('My tomato leaves are wilting and turning yellow in Moore County NC — what could be wrong?')">Wilting tomatoes</button>
+        <button class="chip" onclick="askClaude('White powdery coating on my squash leaves in Moore County NC — organic treatment options?')">Powdery mildew on squash</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <input id="pq" type="text" placeholder="Describe symptoms or name a pest…" style="flex:1;min-width:180px;font-family:var(--ff);font-size:14px;padding:9px 12px;border:1px solid var(--bdr2);border-radius:var(--rad);background:var(--bg);color:var(--tx);outline:none">
+        <button class="ask-btn" onclick="askFromInput('pq','Pest or disease in my Moore County NC garden: ')"><i class="ti ti-external-link" aria-hidden="true"></i> Identify &amp; treat</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-leaf" aria-hidden="true"></i> Organic pest &amp; disease control</div>
+      <div class="tblock">
+        <h4><span class="badge bg">Insect controls</span></h4>
+        <ul class="tlist">
+          <li>Neem oil — broad-spectrum; spray leaves top and bottom at dusk. Repeat every 7–14 days and after rain.</li>
+          <li>Insecticidal soap — kills aphids, mites, whiteflies on contact. Do not spray in full sun or heat.</li>
+          <li>Bacillus thuringiensis (Bt) — targets caterpillars and hornworms only. OMRI-listed organic.</li>
+          <li>Spinosad — effective against beetles, thrips, leafminers. OMRI-listed organic. Very safe for mammals.</li>
+          <li>Kaolin clay — coats leaves and stems as a physical deterrent to cucumber beetles and squash vine borers.</li>
+          <li>Row covers (spunbonded fabric) — most reliable physical barrier against cucumber beetles and vine borers on young plants.</li>
+          <li>Trap crops — plant Blue Hubbard squash at garden edges to lure squash vine borers away from your main crop.</li>
+        </ul>
+      </div>
+      <div class="divider"></div>
+      <div class="tblock">
+        <h4><span class="badge ba">Fungal &amp; bacterial disease</span></h4>
+        <ul class="tlist">
+          <li>Copper fungicide (organic) — effective against bacterial wilt, early blight, downy mildew. Apply preventively in humid NC summers.</li>
+          <li>Baking soda spray: 1 tsp baking soda + 1 qt water + a few drops dish soap — suppresses powdery mildew on cucurbits.</li>
+          <li>Remove and bag infected leaves immediately. Never compost diseased plant material.</li>
+          <li>Water at soil level only — drip or soaker hoses. Overhead watering spreads fungal spores in humid NC summers.</li>
+          <li>Rotate crops yearly — no tomatoes, peppers, or eggplant in the same bed more than once every 3 years.</li>
+          <li>Choose disease-resistant varieties — look for V, F, N, T codes on seed packets (NC State Extension guidance).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WILDLIFE ────────────────────────────────────────── -->
+  <div id="wild" class="section" role="tabpanel">
+    <div class="card card-warn">
+      <div class="card-title"><i class="ti ti-info-circle" aria-hidden="true"></i> Wildlife in Moore County</div>
+      <p style="font-size:13px;color:var(--tx2);line-height:1.6">White-tailed deer are common throughout the Sandhills. Moore County Master Gardeners note that no plant is truly deer-resistant — a hungry deer will eat anything. Deer leave ragged, torn browse marks; rabbits leave clean diagonal cuts near the ground. <br><br><strong style="color:var(--tx)">Do NOT use mothballs</strong> to deter wildlife — this is illegal under federal pesticide law and dangerous to children and pets (NC State Extension).</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🦌 Deer prevention</div>
+      <ul class="tlist">
+        <li><strong>8-foot fence</strong> — most reliable barrier. Deer can jump 6 ft but rarely risk a blind landing over 8 ft. Woven wire or polypropylene deer netting both work.</li>
+        <li><strong>Double fence</strong> — two 4-foot fences 3–4 feet apart. Deer are reluctant to jump into a narrow enclosed space.</li>
+        <li><strong>Electric fence with peanut butter bait</strong> — deer contact the wire, receive a deterring shock, and learn to avoid the area.</li>
+        <li><strong>Putrescent egg solid sprays</strong> (Deer Off, Liquid Fence) — reapply every 2 weeks and after rain. Most effective commercial repellent category.</li>
+        <li><strong>Homemade egg spray:</strong> 1 egg + 1 cup milk + 1 tbsp dish soap + 1 tbsp cooking oil per gallon of water. Spray foliage and reapply every 2 weeks.</li>
+        <li><strong>White clover perimeter planting</strong> — deer graze it preferentially, leaving vegetables alone (reported effective by Moore County gardeners).</li>
+        <li>Interplant lavender, rosemary, sage, and lamb's ear around the garden border — deer dislike their bitter or aromatic foliage.</li>
+        <li>Motion-activated sprinklers — startle deer at night when most active. Can lose effectiveness over time as deer habituate.</li>
+        <li>Contact Moore County Cooperative Extension: <strong>910-947-3188</strong> for depredation permit info if damage is severe.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🐇 Rabbit prevention</div>
+      <ul class="tlist">
+        <li><strong>2-foot chicken wire fence buried 6 inches underground</strong> and bent 90° outward — rabbits dig under flat-bottomed fences.</li>
+        <li>Rabbits leave clean, diagonal cuts at ground level — identify early before a colony establishes.</li>
+        <li><strong>Cayenne pepper spray:</strong> 2 tbsp cayenne + 1 tbsp dish soap per gallon of water. Spray around plant bases. Reapply after rain.</li>
+        <li>Hardware cloth cylinders around individual transplants until plants are at least 12 inches tall.</li>
+        <li>Eliminate brush piles, wood piles, and dense shrubs near the garden — rabbits need nearby cover to forage safely.</li>
+        <li>Dried blood meal sprinkled around the garden border repels rabbits and adds nitrogen to sandy Sandhills soil.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🐀 Groundhog &amp; rodent prevention</div>
+      <ul class="tlist">
+        <li><strong>Bury wire mesh 12 inches deep</strong>, bent 90° outward underground. Groundhogs are powerful diggers.</li>
+        <li>Top 12 inches of fence should be floppy and unsupported — groundhogs cannot climb past a rolling top section.</li>
+        <li>Live trap and relocate at least 5 miles away. Contact Moore County Animal Control for guidance.</li>
+        <li>Remove fallen fruit, overripe vegetables, bird feeders, and compost near the garden — all attract rodents.</li>
+        <li><strong>Voles:</strong> wrap root vegetables and bulbs in hardware cloth cylinders buried in the soil.</li>
+        <li>Castor oil granules around the perimeter repel groundhogs and moles without harming them or the soil.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── SOIL ────────────────────────────────────────────── -->
+  <div id="soil" class="section" role="tabpanel">
+    <div class="callout">
+      <strong>Sandhills sandy soil fact:</strong> Moore County's deep, fast-draining sandy soils lose both water and nutrients quickly — the defining growing challenge for Sandhills gardeners. The good news: sandy soils warm up early, are easy to work, and respond dramatically to organic matter. Get a soil test first — Moore County Cooperative Extension will send your sample to NCDA&amp;CS labs. Call <strong>910-947-3188</strong>.
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-shovel" aria-hidden="true"></i> Amending Sandhills sandy soil</div>
+      <ul class="tlist">
+        <li><strong>Compost is the foundation</strong> — add 3–4 inches and till to 8–10 inches every season. The single most effective amendment for sandy soil (NC State Extension).</li>
+        <li><strong>Cover crops</strong> — fall: crimson clover, hairy vetch, winter rye. Summer: cowpeas, buckwheat, pearl millet. Till in at flowering to add nitrogen and organic matter.</li>
+        <li><strong>Biochar</strong> — mixed at 5–10% by volume dramatically improves water and nutrient retention in sandy soils long-term.</li>
+        <li><strong>Aged wood chip mulch</strong> — 3–4 inches around plants reduces watering frequency by up to 50% and feeds soil microbes as it breaks down. Use aged chips to avoid nitrogen tie-up.</li>
+        <li><strong>Worm castings</strong> — add ¼–½ cup per transplant hole. Improves water-holding capacity and feeds beneficial soil microbes.</li>
+        <li><strong>Raised beds</strong> are highly recommended. Fill with: 60% topsoil + 30% compost + 10% vermiculite or perlite.</li>
+        <li>Target soil pH 6.0–6.8. Sandy Sandhills soils are often slightly acidic — add agricultural lime per soil test results.</li>
+        <li>Increase fertilizer frequency by ~20% vs. package directions for sandy soils — nutrients leach out faster (NC State Extension).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-recycle" aria-hidden="true"></i> Making organic fertilizer at home</div>
+      <div class="tblock">
+        <h4>Compost tea</h4>
+        <ul class="tlist">
+          <li>Fill a 5-gallon bucket ⅓ with finished compost. Add water to top + 1 tbsp unsulfured molasses.</li>
+          <li>Aerate with an aquarium pump for 24–36 hours. Strain through burlap. Dilute 1:10 with water.</li>
+          <li>Apply as a soil drench every 2–3 weeks during the growing season. Especially valuable in leaching sandy soil.</li>
+        </ul>
+      </div>
+      <div class="divider"></div>
+      <div class="tblock">
+        <h4>Worm bin (vermicompost)</h4>
+        <ul class="tlist">
+          <li>Red wiggler worms (Eisenia fetida) in a ventilated bin with shredded cardboard or newspaper bedding.</li>
+          <li>Feed vegetable peelings, coffee grounds, crushed eggshells, tea bags. No meat, dairy, or oily foods.</li>
+          <li>Harvest dark, crumbly castings every 3–4 months. The highest-quality organic fertilizer you can make at home.</li>
+        </ul>
+      </div>
+      <div class="divider"></div>
+      <div class="tblock">
+        <h4>Organic granular blends</h4>
+        <ul class="tlist">
+          <li><strong>Blood meal (12-0-0)</strong> — fast nitrogen. Use for leafy greens and corn. Also repels rabbits around beds.</li>
+          <li><strong>Bone meal (3-15-0)</strong> — slow phosphorus for root development and transplant establishment.</li>
+          <li><strong>Kelp meal (1-0-2)</strong> — micronutrients + potassium. Vital in leached sandy soils deficient in trace minerals.</li>
+          <li><strong>Greensand</strong> — very slow potassium + micronutrients. Also improves water-holding in sandy soils over time.</li>
+          <li><strong>Fish emulsion (5-2-2)</strong> — fast all-purpose liquid. Apply diluted every 2–3 weeks to growing crops.</li>
+          <li><strong>DIY complete blend:</strong> 4 parts compost + 1 part blood meal + 1 part bone meal + ½ part kelp meal. Apply 2–3 cups per 10 sq ft, worked into top 4 inches.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ask-box">
+      <p>Ask a specific soil, composting, or fertilizer question for Moore County:</p>
+      <div class="chip-group">
+        <button class="chip" onclick="askClaude('How do I raise soil pH in sandy Sandhills soil Moore County NC organically?')">Raise soil pH</button>
+        <button class="chip" onclick="askClaude('Best compost for raised beds in Moore County NC Sandhills sandy soil')">Best compost for raised beds</button>
+        <button class="chip" onclick="askClaude('How to fix nitrogen deficiency in sandy Sandhills garden soil organically?')">Fix nitrogen deficiency</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <input id="soilq" type="text" placeholder="e.g. how do I improve drainage in clay-sandy mix…" style="flex:1;min-width:180px;font-family:var(--ff);font-size:14px;padding:9px 12px;border:1px solid var(--bdr2);border-radius:var(--rad);background:var(--bg);color:var(--tx);outline:none">
+        <button class="ask-btn" onclick="askFromInput('soilq','Soil or fertilizer question for Moore County NC Sandhills garden: ')"><i class="ti ti-external-link" aria-hidden="true"></i> Ask Claude</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>Sources:</strong>
+    <a href="https://content.ces.ncsu.edu/central-north-carolina-planting-calendar-for-annual-vegetables-fruits-and-herbs" target="_blank" rel="noopener">NC State Extension Central NC Planting Calendar (AG-69)</a> ·
+    <a href="https://content.ces.ncsu.edu/extension-gardener-handbook" target="_blank" rel="noopener">NC Extension Gardener Handbook</a> ·
+    <a href="https://moore.ces.ncsu.edu/" target="_blank" rel="noopener">Moore County Cooperative Extension</a> ·
+    <a href="https://pender.ces.ncsu.edu/news/improving-sandy-soils/" target="_blank" rel="noopener">Improving Sandy Soils (NC Extension)</a> ·
+    <a href="https://content.ces.ncsu.edu/extension-gardener-handbook/20-wildlife" target="_blank" rel="noopener">Wildlife — NC Extension Gardener Handbook Ch. 20</a> ·
+    Farmer's Almanac · Collard Greens and Common Ground: A NC Community Food Gardening Handbook · NC State Sandhills Research Station · USDA Plant Hardiness Zone Map 2023
+  </div>
+</div>
+
+<script>
+// Tab switching — plain JS, no dependencies, works on all browsers and local files
+function show(id, btn) {
+  var sections = document.querySelectorAll('.section');
+  var tabs = document.querySelectorAll('.tab');
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].classList.remove('active');
+  }
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove('active');
+    tabs[i].setAttribute('aria-selected', 'false');
+  }
+  var el = document.getElementById(id);
+  if (el) el.classList.add('active');
+  // Find the clicked tab by its onclick content
+  for (var i = 0; i < tabs.length; i++) {
+    var oc = tabs[i].getAttribute('onclick') || '';
+    if (oc.indexOf("'" + id + "'") !== -1) {
+      tabs[i].classList.add('active');
+      tabs[i].setAttribute('aria-selected', 'true');
+    }
+  }
+}
+
+// Opens Claude.ai with the question pre-filled in a new tab
+function askClaude(question) {
+  var context = 'I am gardening in Moore County, North Carolina (Southern Pines / Sandhills area, Zone 7b-8a, deep sandy Sandhills soil, last frost April 14, first frost November 5). Please give me specific advice using NC State Extension guidance where relevant. My question: ' + question;
+  var url = 'https://claude.ai/new?q=' + encodeURIComponent(context);
+  window.open(url, '_blank', 'noopener');
+}
+
+function askFromInput(inputId, prefix) {
+  var val = document.getElementById(inputId).value.trim();
+  if (!val) return;
+  askClaude((prefix || '') + val);
+}
+
+// Allow Enter key on all inputs
+var inputs = document.querySelectorAll('input[type="text"]');
+for (var i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      var id = this.id;
+      if (id === 'sq') askFromInput('sq');
+      if (id === 'pq') askFromInput('pq', 'Pest or disease in my Moore County NC garden: ');
+      if (id === 'soilq') askFromInput('soilq', 'Soil or fertilizer question for Moore County NC Sandhills garden: ');
+    }
+  });
+}
+</script>
+</body>
+</html>
